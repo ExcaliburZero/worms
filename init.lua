@@ -15,7 +15,11 @@ minetest.register_abm({
         if math.random(1,100) ~= 1 and
         (p_node.name == "default:stone"
         or p_node.name == "default:mossycobble"
-        or p_node.name == "air") then
+        or p_node.name == "air"
+        or p_node.name == "default:water_flowing"
+        or p_node.name == "default:water_source"
+        or p_node.name == "default:lava_flowing"
+        or p_node.name == "default:lava_source") then
             minetest.set_node(p, node)
             minetest.remove_node(pos)
         else
