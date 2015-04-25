@@ -38,6 +38,8 @@ minetest.register_abm({
                         -- Randomly create rainbows or air:
                         if math.random(1, 100) == 1 then
                             minetest.set_node(npos, {name="default:nyancat_rainbow"})
+                        elseif math.random(1, 100) == 1 then
+                            minetest.set_node(npos, {name="default:meselamp"})
                         else
                             minetest.remove_node(npos)
                         end
