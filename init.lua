@@ -34,11 +34,10 @@ minetest.register_abm({
                     local npos = {x=pos.x + dx, y=pos.y + dy, z=pos.z + dz}
                     local nnode = minetest.get_node(npos)
                     if nnode.name == "default:stone"
-                    or nnode.name == "default:mossycobble" then
+                    or nnode.name == "default:mossycobble"
+                    or nnode.name == "default:meselamp" then
                         -- Randomly create rainbows or air:
                         if math.random(1, 100) == 1 then
-                            minetest.set_node(npos, {name="default:nyancat_rainbow"})
-                        elseif math.random(1, 100) == 1 then
                             minetest.set_node(npos, {name="default:meselamp"})
                         else
                             minetest.remove_node(npos)
@@ -55,7 +54,7 @@ minetest.register_abm({
                 return
             end
             -- Randomly create mese lamps or mossy cobblestone
-            if math.random(1, 80) == 1 then
+            if math.random(1, 60) == 1 then
                 minetest.set_node(stone, {name="default:meselamp"})
             else
                 minetest.set_node(stone, {name="default:mossycobble"})
